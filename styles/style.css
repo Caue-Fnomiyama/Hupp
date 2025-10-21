@@ -4,7 +4,7 @@
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Adicionado para facilitar o cálculo de layout */
+  box-sizing: border-box;
 }
 
 body {
@@ -48,8 +48,7 @@ span {
 }
 
 .nav {
-  width: 60%; /* Aumentado para melhor responsividade */
-
+  width: 60%;
   height: auto;
   margin: 0;
   padding: 5px 5px;
@@ -66,7 +65,7 @@ span {
 .logo {
   transform: rotate(10deg);
   max-width: 5%;
-  min-width: 50px; /* Garante que o logo não fique muito pequeno */
+  min-width: 50px;
   transition: 300ms;
   filter: invert(1);
   cursor: pointer;
@@ -126,17 +125,156 @@ span {
   transition: 0.3s;
 }
 
+/* ======================================================= */
+/* MEDIA QUERY - RESPONSIVIDADE (max-width: 950px) */
+/* ======================================================= */
 @media (max-width: 950px) {
+  /* Regra Principal: Aplica 100% de largura onde era 80% (hero) */
+  .nav {
+    width: 95%;
+    padding: 5px 15px;
+  }
+
   .hero {
+    width: 100%; /* Ajuste principal solicitado */
     flex-direction: column;
     height: auto;
+    padding: 0 5%;
+    min-height: 100vh;
   }
 
   .text-box {
     margin-top: 12vh;
-    width: 100% !important;
+    width: 100% !important; /* Ajuste principal solicitado */
+    padding: 0 10px;
+    gap: 20px;
   }
 
+  .text-box h1 {
+    font-size: 3rem;
+    width: 100%;
+  }
+
+  .text-box p {
+    width: 90%;
+    font-size: 1.1rem;
+  }
+
+  .button-box {
+    width: 100%;
+    height: 120px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .reflex-button {
+    position: static;
+    width: 80%;
+  }
+
+  .cta,
+  .reflex {
+    position: static;
+    width: 80%;
+  }
+
+  .button {
+    font-size: 1.1rem;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .info {
+    width: 100%; /* Ajuste principal solicitado */
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  /* Ajuste no Carrossel de Cards (info) */
+  .gallery-wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .gallery {
+    gap: 15px;
+  }
+
+  .card {
+    width: 320px;
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 15px;
+  }
+
+  .card-box {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .card-box h2 {
+    font-size: 2rem;
+  }
+
+  .card-box p {
+    font-size: 1rem;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+  }
+
+  .image-box {
+    position: static;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  /* Ocultar setas em mobile (o usuário deve deslizar) */
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+
+  /* Ajuste para info2 (Benefícios) */
+  .info2 {
+    width: 100%; /* Ajuste principal solicitado */
+    height: 80vh;
+    padding: 50px 0;
+  }
+
+  .hupp-carousel-container h1 {
+    font-size: 3rem;
+    position: static;
+    margin-bottom: 30px;
+  }
+
+  .hupp-card {
+    width: 300px;
+    height: 350px;
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .hupp-carousel-wrapper {
+    padding: 0 10px;
+  }
+
+  /* Estilos do Menu Mobile */
   aside {
     width: 100% !important;
   }
@@ -187,6 +325,12 @@ span {
     font-size: 24px;
 
     opacity: 0;
+    color: #000;
+  }
+
+  .login.mob {
+    color: #fff;
+    background: linear-gradient(90deg, #0035bb, #029ad6, #0035bb);
   }
 
   .nav-list li:nth-child(1) a {
@@ -200,8 +344,6 @@ span {
   .nav-list li:nth-child(3) a {
     transition: 0.5s 0.6s;
   }
-
-  /* Estilos ativos */
 
   .nav.active .nav-list {
     clip-path: circle(1500px at 90% -15%);
@@ -233,6 +375,9 @@ span {
     top: -7px;
   }
 }
+/* ======================================================= */
+/* FIM DA MEDIA QUERY */
+/* ======================================================= */
 
 .reflex-button {
   display: flex;
@@ -386,7 +531,7 @@ span {
 
   justify-content: center;
 
-    & p {
+  & p {
     font-size: 1.3rem;
     color: #fefefe;
   }
@@ -431,7 +576,7 @@ span {
   & h2 {
     font-size: 3rem;
   }
-   & p {
+  & p {
     font-size: 1.3rem;
   }
   width: 60%;
@@ -475,22 +620,20 @@ span {
 }
 
 .logo2 {
-filter: invert(1);
-position: absolute;
-right: -80px !important;
-bottom: -50px;
-min-width: 350px !important;
+  filter: invert(1);
+  position: absolute;
+  right: -80px !important;
+  bottom: -50px;
+  min-width: 350px !important;
 }
 
 .logo3 {
-position: absolute;
-right: -0px !important;
-filter: brightness(0.8);
-bottom: -50px;
-min-width: 250px !important;
+  position: absolute;
+  right: -0px !important;
+  filter: brightness(0.8);
+  bottom: -50px;
+  min-width: 250px !important;
 }
-
-
 
 .gallery:hover > .card:not(:hover) {
   filter: blur(10px);
@@ -546,8 +689,6 @@ min-width: 250px !important;
   display: flex;
   flex-flow: row nowrap;
   gap: 25px;
-  /* Mude de '0.6s ease-in-out' para algo mais rápido e fluido */
-  /* '0.3s cubic-bezier(.42,0,.58,1)' ou '0.3s ease-out' são boas opções */
   transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
@@ -555,7 +696,6 @@ min-width: 250px !important;
   flex-shrink: 0;
 }
 
-/* esconde barras */
 .gallery-wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -563,7 +703,6 @@ min-width: 250px !important;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 
 .info2 {
   background-image: url(/media/fundo2.png);
@@ -575,174 +714,138 @@ min-width: 250px !important;
   text-align: center;
   justify-content: center;
 
-    & p {
+  & p {
     font-size: 1rem;
     color: #fefefe;
     max-width: 50%;
   }
 
-
   display: flex;
   flex-direction: column;
-
 }
 
-/* 1. Estado Inicial (fora da tela ou invisível) */
 .hupp-fade-in-element {
-    opacity: 0;
-    /* Move o elemento para baixo 50 pixels. O movimento deve usar transform: translate! */
-    transform: translateY(50px); 
-    
-    /* Configuração da Transição: Use a duração desejada (ex: 1 segundo, 1000ms) */
-    /* Garanta que SÓ 'opacity' e 'transform' estão listados para alta performance */
-    transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1000ms ease-out, transform 1000ms ease-out;
 }
 
-/* 2. Estado Final (visível na tela) */
 .hupp-faded-in {
-    opacity: 1;
-    /* Retorna o elemento para sua posição original */
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
-
-/* ------------------------------------------------------------- */
-/* Exemplo de uso no seu HTML */
-/*
-<div class="hupp-card hupp-item hupp-fade-in-element">...</div>
-*/
 
 .hupp-carousel-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    & h1 {
-      position: absolute;
-      top: -20%;
-      font-size: 5rem;
-    }
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  & h1 {
+    position: absolute;
+    top: -20%;
+    font-size: 5rem;
+  }
 }
 
 .hupp-carousel-wrapper {
-    width: 100%;
-    overflow: hidden; /* CRUCIAL: Esconde o conteúdo que está fora da área de visualização */
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Esconde barras de rolagem */
 .hupp-carousel-wrapper::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .hupp-carousel-wrapper {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* === NOVO ESTILO PARA MOVIMENTO CONTÍNUO === */
 .hupp-gallery {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 25px; /* Gap entre os cards */
-    
-    /* 1. Removemos o transition: transform... do JS anterior */
-    /* 2. Definimos a largura para ser 2x o conteúdo para o loop */
-    width: max-content; 
-    
-    /* 3. APLICA A ANIMAÇÃO CSS AQUI */
-    animation: hupp-marquee 30s linear infinite; /* 30s para a velocidade, ajuste conforme necessário */
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 25px;
+  width: max-content;
+  animation: hupp-marquee 30s linear infinite;
 }
 
-/* Novo agrupamento para facilitar a duplicação no HTML */
 .hupp-content-group {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
-/* Efeito: Pausar a rolagem contínua ao passar o mouse */
-
-
-/* === KEYFRAMES para o Movimento Contínuo === */
 @keyframes hupp-marquee {
-    0% {
-        /* Começa na posição normal */
-        transform: translateX(0);
-    }
-    100% {
-        /* Move todo o conteúdo para a esquerda em exatamente metade da galeria (primeira cópia) */
-        /* O cálculo exato deve levar em conta o gap: -50% do content group */
-        
-        /* Como duplicamos o grupo, a animação vai do início (0%) até o início da SEGUNDA cópia. */
-        /* Para este caso, onde o conteúdo tem tamanho definido, -50% é o valor mais seguro para o loop. */
-        transform: translateX(-50%); 
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-
-/* Estilos do Card (mantidos os nomes específicos) */
 .hupp-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 380px; 
-    height: 450px;
-    padding: 50px;
-    gap: 25px;
-    position: relative;
-    border-radius: 80px;
-    background: radial-gradient(
-        58.69% 43.16% at 50% 87.61%,
-        #0140be83 0%,
-        rgba(0, 0, 0, 0) 100%
-    );
-    box-shadow: 0px 0px 56px 0px #0035bb83 inset;
-    backdrop-filter: blur(12px);
-    transition: 1s;
-    flex-shrink: 0; /* Garante que os cards não encolham */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 380px;
+  height: 450px;
+  padding: 50px;
+  gap: 25px;
+  position: relative;
+  border-radius: 80px;
+  background: radial-gradient(
+    58.69% 43.16% at 50% 87.61%,
+    #0140be83 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  box-shadow: 0px 0px 56px 0px #0035bb83 inset;
+  backdrop-filter: blur(12px);
+  transition: 1s;
+  flex-shrink: 0;
 }
 
 .hupp-card-box {
-    display: flex;
-    flex-direction: column;
-    color: #fefefe;
-    gap: 25px;
-    width: 60%;
+  display: flex;
+  flex-direction: column;
+  color: #fefefe;
+  gap: 25px;
+  width: 60%;
 }
 .hupp-card-box h2 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 .hupp-card-box p {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .hupp-card-image {
-    position: relative;
-    width: 30%;
-    height: 100%;
-    border-radius: 40px;
-    background-color: #000000;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 56px 0px #0035bb83;
-    display: flex;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  border-radius: 40px;
+  background-color: #000000;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 56px 0px #0035bb83;
+  display: flex;
 }
 
 .hupp-image-box {
-    position: absolute;
-    width: 300px;
-    right: 0;
-    overflow: hidden;
-    border-radius: 40px;
-    background-color: #0035bb00;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    bottom: 0;
+  position: absolute;
+  width: 300px;
+  right: 0;
+  overflow: hidden;
+  border-radius: 40px;
+  background-color: #0035bb00;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  bottom: 0;
 }
 
-/* Efeito de hover mantido para o card individual */
 .hupp-gallery:hover > .hupp-content-group > .hupp-card:not(:hover) {
-    filter: blur(10px);
-    transform: scale(0.9, 0.9);
-    backdrop-filter: blur(12px);
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+  backdrop-filter: blur(12px);
 }
